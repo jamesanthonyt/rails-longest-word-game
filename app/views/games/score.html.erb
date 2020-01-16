@@ -1,0 +1,27 @@
+<h1>Games#score</h1>
+<p>Find me in app/views/games/score.html.erb</p>
+
+<div>
+  <h4>Your Word:</h4>
+  <p><%= @guess.capitalize %></p>
+</div>
+
+<div>
+  <% if @match == true %>
+    <% if @valid_word == true %>
+      <p><strong><%= @guess %></strong> is valid!</p>
+    <% else %>
+      <p>Sorry, <strong><%= @guess %></strong> is not a valid word!</p>
+    <% end %>
+  <% else %>
+    <p>Sorry, <strong><%= @guess %></strong> cannot be found in <%= @grid %></p>
+  <% end %>
+</div>
+
+<div>
+  <p>Your score: <%= @score %></p>
+</div>
+
+<p><%= @test %></p>
+
+<%= link_to 'Play again', new_path %>
